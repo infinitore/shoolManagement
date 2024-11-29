@@ -1,0 +1,50 @@
+entity Etudiant {
+  prenom String required
+  nom String required
+  dateNaissance LocalDate required
+  adresse String
+  email String
+  telephone String
+}
+
+entity Enseignant {
+  prenom String required
+  nom String required
+  dateEmbauche LocalDate required
+  specialite String required
+  email String
+  telephone String
+}
+
+entity Classe {
+  nom String required 
+  niveau String required
+  anneeScolaire String required
+}
+
+entity Cours {
+  nom String required
+  description String
+  nombreHeures Integer 
+}
+
+relationship OneToMany {
+  Enseignant{cours(nom)} to Cours{enseignant(prenom)}
+  Classe{etudiants(prenom)} to Etudiant{classe(nom)}
+
+}
+
+relationship ManyToOne {
+  Cours{classe(nom)} to Classe
+}
+
+
+relationship ManyToMany {
+  Etudiant{cours(nom)} to Cours{etudiants(prenom)}
+}
+
+
+dto * with mapstruct
+service * with serviceImpl
+filter *
+paginate * with pagination

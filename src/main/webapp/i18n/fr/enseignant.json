@@ -1,0 +1,30 @@
+{
+  "shoolManagementApp": {
+    "enseignant": {
+      "home": {
+        "title": "Enseignants",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Enseignant",
+        "createOrEditLabel": "Créer ou éditer un Enseignant",
+        "notFound": "Aucun Enseignant trouvé"
+      },
+      "created": "Un nouveau Enseignant a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Enseignant avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Enseignant avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Enseignant {{ id }} ?"
+      },
+      "detail": {
+        "title": "Enseignant"
+      },
+      "id": "ID",
+      "prenom": "Prenom",
+      "nom": "Nom",
+      "dateEmbauche": "Date Embauche",
+      "specialite": "Specialite",
+      "email": "Email",
+      "telephone": "Telephone",
+      "cours": "Cours"
+    }
+  }
+}

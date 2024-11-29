@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20241129191301"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "niveau",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "anneeScolaire",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "name": "Classe",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityField": "prenom",
+      "otherEntityName": "etudiant",
+      "otherEntityRelationshipName": "classe",
+      "relationshipName": "etudiants",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
