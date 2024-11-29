@@ -1,14 +1,14 @@
 import './header.scss';
 
 import React, { useState } from 'react';
-import { Translate, Storage } from 'react-jhipster';
-import { Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
+import { Storage } from 'react-jhipster';
 import LoadingBar from 'react-redux-loading-bar';
+import { Collapse, Nav, Navbar, NavbarToggler } from 'reactstrap';
 
-import { Home, Brand } from './header-components';
-import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
 import { useAppDispatch } from 'app/config/store';
 import { setLocale } from 'app/shared/reducers/locale';
+import { AccountMenu, AdminMenu, EntitiesMenu, LocaleMenu } from '../menus';
+import { Brand, Home } from './header-components';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
@@ -30,14 +30,7 @@ const Header = (props: IHeaderProps) => {
     dispatch(setLocale(langKey));
   };
 
-  const renderDevRibbon = () =>
-    props.isInProduction === false ? (
-      <div className="ribbon dev">
-        <a href="">
-          <Translate contentKey={`global.ribbon.${props.ribbonEnv}`} />
-        </a>
-      </div>
-    ) : null;
+  const renderDevRibbon = () => (props.isInProduction === false ? <div></div> : null);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
